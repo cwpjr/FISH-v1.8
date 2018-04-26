@@ -1,10 +1,10 @@
-// FISH_STM32F4_Peripheral_Register_ADDRS.h
+// FISH_GPIO.h
 // Valid in v1.8
-// FISH_STM32F4_Peripheral_Register_ADDRS
 // FISH_RM_CONFIG_#DEFINES.h
+// FISH_STM32F4_GPIO_WC
 
 // Conditional used in FISH_STM32F4_IAR.s to modify last dictionary link
-// to include these constant definitions
+// to include this wordcat.
 
 //=============================== WORDCAT ====================================//
 //NOEXEC HEADERFORWORDCATEGORIES

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>2</fileVersion>
-    <fileChecksum>4158031288</fileChecksum>
+    <fileChecksum>3812169429</fileChecksum>
     <configuration>
         <name>STM32F407vg_Disco</name>
         <outputs>
@@ -248,6 +248,14 @@
             <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
             <file>$PROJ_DIR$\STM32F407_Disco_Debug\Obj\main.o</file>
             <file>$PROJ_DIR$\STM32F407_Disco_Debug\Obj\main.pbi</file>
+            <file>$PROJ_DIR$\..\FISH-v1.72\startup_stm32f4xx.s</file>
+            <file>$PROJ_DIR$\v1.8 Goals.txt</file>
+            <file>$PROJ_DIR$\v1.8 Goals.c</file>
+            <file>$PROJ_DIR$\STM32F407_Disco_Debug\List\v1.8 Goals.lst</file>
+            <file>$PROJ_DIR$\STM32F407_Disco_Debug\Obj\v1.8 Goals.pbi</file>
+            <file>$PROJ_DIR$\STM32F407_Disco_Debug\Obj\v1.8 Goals.o</file>
+            <file>$PROJ_DIR$\FISH_GPIO_WC.h</file>
+            <file>$PROJ_DIR$\v1.8 Goals.h</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
@@ -305,7 +313,7 @@
             <inputs>
                 <tool>
                     <name>AARM</name>
-                    <file> 15 58 26 22 45 3 42 1 10 16 12 41 38 20 47 28</file>
+                    <file> 15 58 26 22 45 3 42 1 10 16 12 82 41 38 20 47 28</file>
                 </tool>
             </inputs>
         </file>
@@ -426,6 +434,19 @@
                     <file> 63 24 30 54</file>
                 </tool>
             </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\v1.8 Goals.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 79</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 80</file>
+                </tool>
+            </outputs>
         </file>
         <forcedrebuild>
             <name>$PROJ_DIR$\FISH_STM32F4_MEMMAP.s</name>

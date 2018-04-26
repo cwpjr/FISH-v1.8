@@ -1,12 +1,12 @@
 ###################################################################################################
 #                                                                                                 #
-#     IAR Assembler V8.22.1.15669/W32 for ARM 26/Apr/2018  14:27:55                               #
+#     IAR Assembler V8.22.1.15669/W32 for ARM 26/Apr/2018  14:57:14                               #
 #     Copyright 1999-2018 IAR Systems AB.                                                         #
 #                                                                                                 #
 #           Source file   =  C:\Users\Clyde W Phillips Jr\Desktop\FISH-v1.8\FISH_STM32F4_IAR.s    #
 #           List file     =  C:\Users\Clyde W Phillips Jr\Desktop\FISH-v1.8\STM32F407_Disco_Debug\List\FISH_STM32F4_IAR.lst#
 #           Object file   =  C:\Users\Clyde W Phillips Jr\Desktop\FISH-v1.8\STM32F407_Disco_Debug\Obj\FISH_STM32F4_IAR.o#
-#           Command line  =  -f C:\Users\CLYDEW~1\AppData\Local\Temp\EWA42.tmp                    #
+#           Command line  =  -f C:\Users\CLYDEW~1\AppData\Local\Temp\EWE0ED.tmp                   #
 #                            (C:\Users\Clyde W Phillips Jr\Desktop\FISH-v1.8\FISH_STM32F4_IAR.s   #
 #                            -OC:\Users\Clyde W Phillips Jr\Desktop\FISH-v1.8\STM32F407_Disco_Debug\Obj #
 #                            -s+ -M<> -w+ -r -DFISH_PubRel_WORDSET -DFISH_Debug_WORDSET           #
@@ -16929,8 +16929,8 @@
                   03230313800  
    80                           msg_FISH_TIMESTAMP:
    81    00000074 20617420              DC8     ' at '
-   82    00000078 31343A32373A3         DC8     __TIME__        // Null string
-                  53500        
+   82    00000078 31343A35373A3         DC8     __TIME__        // Null string
+                  13400        
    83                           #ifdef EOL_NAK
    84                           msg_SIGNON_DLE:
    85    00000081 1500                  DC8     0x15, 0
@@ -16941,8 +16941,33 @@
                   696E204241534
                   52000        
    89                           //-----------------START OF DICTIONARY = Last word in search--------------------
-   90                           // Conditionally include FISH_STM32F4_Peripheral_Register_ADDRS.h include here
-   91                           #ifdef FISH_STM32F4_Peripheral_Register_ADDRS
+   90                           // Conditionally include FISH_STM32F4_GPIO_WC here
+   91                           #ifdef FISH_STM32F4_GPIO_WC
+   92                           $FISH_GPIO_WC.h
+    1                           // FISH_GPIO.h
+    2                           // Valid in v1.8
+    3                           // FISH_RM_CONFIG_#DEFINES.h
+    4                           // FISH_STM32F4_GPIO_WC
+    5                           
+    6                           // Conditional used in FISH_STM32F4_IAR.s to modify last dictionary link
+    7                           // to include this wordcat.
+    8                           
+    9                           //=============================== WORDCAT ====================================//
+   10                           //NOEXEC HEADERFORWORDCATEGORIES
+   11                           //      WC_FISH_SYS: = FISH System: CATEGORY
+   12                           
+   13                            SECTION .text : CONST (2)
+   14                           WC_FISH_GPIO:
+   15    00000000 89                    DC8     0x80+4+5        // +4 is format chars constant
+   16                                                           // +n is Name lenght
+   17    00000001 0D0A                  DC8     0x0D, 0x0A
+   18    00000003 4750494F3A            DC8     'GPIO:'
+   19    00000008 0D8A                  DC8     0x0D, 0x0A+0x80
+   20    0000000A FFFF           ALIGNROM 2,0xFFFFFFFF
+   21    0000000C ........              DC32    WC_FISH_PubRel_NFA        // Where this wordcat links in.
+   22                           
+   23                           
+   93                           // If included link below will point to the GPIO WORDCAT
    94                           #endif
    95                           // 
    96                           //      NOOP NOOP:      ( -- )
@@ -25837,7 +25862,7 @@ EOL_NAK              #define, value: , line:      10:7
 FISH_Debug_WORDSET   #define, value: 1, line:         0         59
 FISH_PubRel_WORDSET  #define, value: 1, line:         0         59
 FISH_STM32F4_GPIO_WC #define, value: , line:       5:7  
-STM32F4_XRC08_168MHZ #define, value: 1, line:         0      59:16
+STM32F4_XRC08_168MHZ #define, value: 1, line:         0      59:17
 TRUE_EQU_NEG_ONE     #define, value: , line:       6:7  
 XON_XOFF             #define, value: , line:       7:7  
 __ARM4TM__           #define, value: 4, line:         0  
@@ -25921,12 +25946,12 @@ i                    #define, value: r5, line:       8:5     611:10   612:10   6
                                                                      4093     4113     4133     4153
                                                                      4366     4415     4438     4635
                                                                      4686     4728     4805     4821
-                                                                     4841     4862   129:14   436:14
-                                                                   565:14     5213     5273     5484
-                                                                    32:16
+                                                                     4841     4862   129:15   436:15
+                                                                   565:15     5213     5273     5484
+                                                                    32:17
 k                    #define, value: r12, line:      19:5     688:10   691:10   691:10   692:10
                                                                    931:10   967:10  1352:10  1363:10
-                                                                    26:16    30:16    30:16
+                                                                    26:17    30:17    30:17
 n                    #define, value: r1, line:       4:5     611:10   613:10   671:10   674:10
                                                                    675:10   763:10   767:10   769:10
                                                                    769:10   881:10   882:10   882:10
@@ -25963,8 +25988,8 @@ n                    #define, value: r1, line:       4:5     611:10   613:10   6
                                                                      4628     4630     4631     4632
                                                                      4634     4679     4682     4682
                                                                      4716     4717     4717     4838
-                                                                     4840     4859     4861   429:14
-                                                                   434:14   560:14   562:14     5211
+                                                                     4840     4859     4861   429:15
+                                                                   434:15   560:15   562:15     5211
                                                                      5212     5242     5251     5255
                                                                      5265     5266     5268     5269
                                                                      5467     5473     5475     5476
@@ -26018,8 +26043,8 @@ p                    #define, value: r7, line:      10:5     625:10   635:10   6
                                                                      4091     4093     4110     4111
                                                                      4113     4130     4131     4133
                                                                      4150     4151     4153     4366
-                                                                     4626     4686     4728   123:14
-                                                                   129:14   428:14   429:14     5213
+                                                                     4626     4686     4728   123:15
+                                                                   129:15   428:15   429:15     5213
                                                                      5242     5243
 pfRAMVectors         #define, value: ((pFunc_t *)0x10000000), line:      90:3  
 r                    #define, value: r6, line:       9:5     701:10   713:10   714:10   714:10
@@ -26118,10 +26143,10 @@ t                    #define, value: r0, line:       3:5     623:10   624:10   6
                                                                      4630     4632     4633     4633
                                                                      4634     4685     4686     4714
                                                                      4714     4722     4728     4839
-                                                                     4840     4860     4861   123:14
-                                                                   125:14   125:14   128:14   128:14
-                                                                   129:14   428:14   432:14   434:14
-                                                                   562:14   563:14   563:14     5212
+                                                                     4840     4860     4861   123:15
+                                                                   125:15   125:15   128:15   128:15
+                                                                   129:15   428:15   432:15   434:15
+                                                                   562:15   563:15   563:15     5212
                                                                      5213     5243     5246     5246
                                                                      5247     5247     5248     5257
                                                                      5264     5272
@@ -26278,19 +26303,19 @@ w                    #define, value: r2, line:       5:5     612:10   613:10   6
                                                                      4805     4805     4805     4821
                                                                      4821     4821     4821     4841
                                                                      4841     4841     4841     4862
-                                                                     4862     4862     4862   124:14
-                                                                   125:14   126:14   127:14   127:14
-                                                                   128:14   129:14   129:14   129:14
-                                                                   129:14   430:14   433:14   436:14
-                                                                   436:14   436:14   436:14   565:14
-                                                                   565:14   565:14   565:14     5213
+                                                                     4862     4862     4862   124:15
+                                                                   125:15   126:15   127:15   127:15
+                                                                   128:15   129:15   129:15   129:15
+                                                                   129:15   430:15   433:15   436:15
+                                                                   436:15   436:15   436:15   565:15
+                                                                   565:15   565:15   565:15     5213
                                                                      5213     5213     5213     5250
                                                                      5251     5253     5255     5263
                                                                      5264     5266     5272     5273
                                                                      5273     5273     5273     5484
-                                                                     5484     5484     5484    28:16
-                                                                    29:16    32:16    32:16    32:16
-                                                                    32:16
+                                                                     5484     5484     5484    28:17
+                                                                    29:17    32:17    32:17    32:17
+                                                                    32:17
 x                    #define, value: r3, line:       6:5     614:10   614:10   625:10   625:10
                                                                    637:10   637:10   648:10   648:10
                                                                    656:10   658:10   660:10   660:10
@@ -26363,10 +26388,10 @@ x                    #define, value: r3, line:       6:5     614:10   614:10   6
                                                                      4715     4716     4728     4728
                                                                      4805     4805     4821     4821
                                                                      4841     4841     4862     4862
-                                                                   129:14   129:14   436:14   436:14
-                                                                   565:14   565:14     5213     5213
+                                                                   129:15   129:15   436:15   436:15
+                                                                   565:15   565:15     5213     5213
                                                                      5273     5273     5484     5484
-                                                                    24:16    28:16    32:16    32:16
+                                                                    24:17    28:17    32:17    32:17
 y                    #define, value: r4, line:       7:5     687:10   690:10   691:10   934:10
                                                                    935:10   948:10   949:10   981:10
                                                                    982:10  1053:10  1055:10  1060:10
@@ -26374,11 +26399,11 @@ y                    #define, value: r4, line:       7:5     687:10   690:10   6
                                                                   1140:10  1247:10  1250:10  1253:10
                                                                   1259:10    23:11    27:11      138
                                                                       140      154      155      165
-                                                                      166   432:14   433:14     5245
+                                                                      166   432:15   433:15     5245
                                                                      5248     5268     5472     5473
                                                                      5474     5475     5477     5478
                                                                      5479     5480     5482     5483
-                                                                    23:16    29:16
+                                                                    23:17    29:17
 
 Segment             Type 	Mode
 ----------------------------------------
@@ -27898,6 +27923,7 @@ VTOR                ABS    CONST UNTYP.           ASEG       E000ED08
 WARM                REL    CONST UNTYP.           .text      580 
 WC_COMPILE_NFA      REL    CONST UNTYP.           .text      0 
 WC_CREATE_NFA       REL    CONST UNTYP.           .text      0 
+WC_FISH_GPIO        REL    CONST UNTYP.           .text      0 
 WC_FISH_PubRel_NFA  REL    CONST UNTYP.           .text      0 
 WC_FISH_SYS_NFA     REL    CONST UNTYP.           .text      0 
 WC_IRQ_NFA          REL    CONST UNTYP.           .text      0 
@@ -28005,7 +28031,7 @@ zero_OUT            REL    CONST UNTYP.           .text      88
 #           CRC:0            #
 #        Errors:   0         #
 #        Warnings: 0         #
-#        Bytes: 83961        #
+#        Bytes: 83977        #
 ##############################
 
 

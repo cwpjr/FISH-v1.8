@@ -87,9 +87,9 @@ msg_SIGNON_DLE:
 msg_MY_OK:
         DC8     " ok, go fish in BASE "
 //-----------------START OF DICTIONARY = Last word in search--------------------
-// Conditionally include FISH_STM32F4_Peripheral_Register_ADDRS.h include here
-#ifdef FISH_STM32F4_Peripheral_Register_ADDRS
-$FISH_STM32F4_Peripheral_Register_ADDRS.h
+// Conditionally include FISH_STM32F4_GPIO_WC here
+#ifdef FISH_STM32F4_GPIO_WC
+$FISH_GPIO_WC.h
 // If included link below will point to the GPIO WORDCAT
 #endif
 // 

@@ -3068,10 +3068,10 @@
         </settings>
     </configuration>
     <file>
-        <name>$PROJ_DIR$\FISH_STM32F4_IAR.s</name>
+        <name>$PROJ_DIR$\FISH_GPIO_WC.h</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\FISH_STM32F4_Peripheral_Register_ADDRS.h</name>
+        <name>$PROJ_DIR$\FISH_STM32F4_IAR.s</name>
     </file>
     <file>
         <name>$PROJ_DIR$\ioSTM32F4x7x.h</name>
@@ -3081,5 +3081,8 @@
     </file>
     <file>
         <name>$PROJ_DIR$\startup_stm32f4xx.s</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\v1.8 Goals.h</name>
     </file>
 </project>

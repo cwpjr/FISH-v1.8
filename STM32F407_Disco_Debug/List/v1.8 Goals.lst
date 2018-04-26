@@ -1,0 +1,39 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.22.1.15669/W32 for ARM       26/Apr/2018  15:05:39
+# Copyright 1999-2018 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Clyde W Phillips Jr\Desktop\FISH-v1.8\v1.8 Goals.c
+#    Command line =  
+#        -f C:\Users\CLYDEW~1\AppData\Local\Temp\EW9548.tmp ("C:\Users\Clyde W
+#        Phillips Jr\Desktop\FISH-v1.8\v1.8 Goals.c" -lCN "C:\Users\Clyde W
+#        Phillips Jr\Desktop\FISH-v1.8\STM32F407_Disco_Debug\List" -o
+#        "C:\Users\Clyde W Phillips
+#        Jr\Desktop\FISH-v1.8\STM32F407_Disco_Debug\Obj" --no_cse --no_unroll
+#        --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling
+#        --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.0\arm\INC\c\DLib_Config_Normal.h" -I "C:\Users\Clyde W Phillips
+#        Jr\Desktop\FISH-v1.8\..\FISH_Libs\FISH_RM_COMMON\" -I "C:\Users\Clyde
+#        W Phillips
+#        Jr\Desktop\FISH-v1.8\..\FISH_Libs\FISH_RM_COMMON_CODE_CORTEX_M\" -On)
+#    Locale       =  C
+#    List file    =  
+#        C:\Users\Clyde W Phillips
+#        Jr\Desktop\FISH-v1.8\STM32F407_Disco_Debug\List\v1.8 Goals.lst
+#    Object file  =  
+#        C:\Users\Clyde W Phillips
+#        Jr\Desktop\FISH-v1.8\STM32F407_Disco_Debug\Obj\v1.8 Goals.o
+#
+###############################################################################
+
+C:\Users\Clyde W Phillips Jr\Desktop\FISH-v1.8\v1.8 Goals.c
+      1          v1.8 goals:
+      2          
+      3          EXPECTFILE
+
+Errors: 2
+Warnings: 1
